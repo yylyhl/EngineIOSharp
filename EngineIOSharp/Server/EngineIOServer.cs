@@ -67,7 +67,7 @@ namespace EngineIOSharp.Server
         public void Dispose() => Stop();
 
         /// <summary>
-        /// Verification result: If no entry is made within 1000ms, it is regarded as passed
+        /// Verification result: If no entry is made within {EngineIOServerOption.VerificationTimeout}ms, it is regarded as passed
         /// </summary>
         public readonly ConcurrentDictionary<string, bool> VerificationResult = new ConcurrentDictionary<string, bool>();
         private EngineIOException Verify(NameValueCollection QueryString, NameValueCollection Headers, EngineIOTransportType ExpectedTransportType)
